@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Models\Proprietaire;
+use App\Models\Immeuble;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
