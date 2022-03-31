@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('studios', function (Blueprint $table) {
             $table->id();
-            $table->integer('libele');
+            $table->string('libele');
             $table->string('superficie');
             $table->integer('nombre_piece');
             $table->unsignedBigInteger('immeuble_id');

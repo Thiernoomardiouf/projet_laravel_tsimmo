@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('bureaus', function (Blueprint $table) {
             $table->id();
-            $table->integer('libele');
+            $table->string('libele');
             $table->string('superficie');
             $table->unsignedBigInteger('immeuble_id');
             $table->foreign('immeuble_id')->references('id')->on('immeubles');
