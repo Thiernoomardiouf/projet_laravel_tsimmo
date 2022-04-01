@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Propriétairte<main>
+    <title>Propriétairte</title>
+</head>
+<body>
+<main>
     <div class="container" style="margin-top: 80px">
          <h2>Liste des entreprises</h2>
          <div class="row">
@@ -36,9 +39,6 @@
              </div>
          </div>
      </div>
-</main></title>
-</head>
-<body>
-    
+</main>
 </body>
 </html>

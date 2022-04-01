@@ -11,10 +11,12 @@ use Illuminate\Http\Request;
 class ProprietaireController extends Controller
 {
     public function index () {
-        $proprietaire = Proprietaire::all();
+
+        $proprietaires = Proprietaire::all();
+        //dump($proprietaires);
 
         return view('proprietaire.index',[
-            'proprietaires' => $proprietaire
+            'proprietaires' => $proprietaires
         ]);
     }
 
