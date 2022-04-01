@@ -32,7 +32,7 @@ Route::get('/', function () {
         Route::get('/proprietaire/{proprietaire}', 'App\Http\Controllers\ProprietaireController@show')->name('proprietaire.show');
 
         // Les routes pour les proprités 
-        Route::get('/immeuble', 'App\Http\Controllers\ImmeubleController@index')->name('immeuble.index');
+        Route::get('/immeuble', 'App\Http\Controllers\ImmeubleController@index')->name('proprietaire.immeuble');
         Route::get('/immeuble/create', 'App\Http\Controllers\ImmeubleController@create')->name('immeuble.create');
         Route::get('/immeuble/store', 'App\Http\Controllers\ImmeubleController@store')->name('immeuble.store');
 

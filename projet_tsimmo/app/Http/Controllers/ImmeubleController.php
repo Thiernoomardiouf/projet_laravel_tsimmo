@@ -11,14 +11,14 @@ class ImmeubleController extends Controller
 
         $immeubles = Immeuble::all();
 
-        return view('biens.index',[
+        return view('proprietaire.immeuble',[
             'immeubles' => $immeubles
         ]);
     }
 
     public function create() {
 
-        return view('biens.create');
+        return view('proprietaire.create');
     }
 
     public function store(Request $request) {
@@ -26,6 +26,6 @@ class ImmeubleController extends Controller
         $inputsData = $request->all();
 
         Immeuble::create($inputsData);
-        return redirect()->route('biens.index');
+        return redirect()->route('proprietaire.index');
     }
 }
