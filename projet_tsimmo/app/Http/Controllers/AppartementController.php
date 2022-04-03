@@ -11,14 +11,14 @@ class AppartementController extends Controller
 
         $appartements = Appartement::all();
 
-        return view('biens.index',[
+        return view('proprietaire.appartements',[
             'appartements' => $appartements
         ]);
     }
 
     public function create() {
 
-        return view('biens.create');
+        return view('proprietaire.create');
     }
 
     public function store(Request $request) {
@@ -26,6 +26,6 @@ class AppartementController extends Controller
         $inputsData = $request->all();
 
         Appartement::create($inputsData);
-        return redirect()->route('biens.index');
+        return redirect()->route('proprietaire.appartement');
     }
 }

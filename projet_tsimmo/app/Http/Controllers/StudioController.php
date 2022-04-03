@@ -11,14 +11,14 @@ class StudioController extends Controller
 
         $studios = Studio::all();
 
-        return view('biens.index',[
+        return view('proprietaire.studio',[
             'studios' => $studios
         ]);
     }
 
     public function create() {
 
-        return view('biens.create');
+        return view('proprietaire.create');
     }
 
     public function store(Request $request) {
@@ -26,6 +26,6 @@ class StudioController extends Controller
         $inputsData = $request->all();
 
         Studio::create($inputsData);
-        return redirect()->route('biens.index');
+        return redirect()->route('proprietaire.studio');
     }
 }

@@ -26,6 +26,6 @@ class ImmeubleController extends Controller
         $inputsData = $request->all();
 
         Immeuble::create($inputsData);
-        return redirect()->route('proprietaire.index');
+        return redirect()->route('proprietaire.immeuble');
     }
 }

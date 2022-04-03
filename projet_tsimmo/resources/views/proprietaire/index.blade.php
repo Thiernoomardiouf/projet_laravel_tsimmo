@@ -54,7 +54,7 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><img src="{{ url('img/ui-sam.png') }}" class="img-circle" width="80"></p>
+          <p class="centered"><img src="{{ url('img/ui-sam.png') }}" class="img-circle" width="100" height="100"></p>
           <h5 class="centered">TS - IMMO</h5>
           <li class="mt">
             <a class="active" href="{{ route('proprietaire.index') }}">
@@ -69,8 +69,10 @@
               </a>
             <ul class="sub">
               <li><a href="{{ route('proprietaire.immeuble') }}">Immeubles</a></li>
-              <li><a href="buttons.html">Appartements</a></li>
-              <li><a href="panels.html">Villas</a></li>
+              <li><a href="{{ route('proprietaire.appartement') }}"> Appartements</a></li>
+              <li><a href="{{ route('proprietaire.villa') }}"> Villas </a></li>
+              <li><a href="{{ route('proprietaire.studio') }}"> Studios</a></li>
+              <li><a href="{{ route('proprietaire.bureau') }}"> Bureaux </a></li>
             </ul>
           </li>
 
@@ -80,6 +82,7 @@
               <span>Propriétaire</span>
               </a>
             <ul class="sub">
+              <li><a href="{{ route('proprietaire.index') }}"> Liste propriétaire </a></li>
               <li><a href="blank.html">Liste des biens</a></li>
               <li><a href="login.html">Login</a></li>
               <li><a href="profile.html">Profile</a></li>

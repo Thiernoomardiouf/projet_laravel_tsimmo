@@ -11,7 +11,7 @@
 
   <!-- Favicons -->
   <link href="{{ url('img/favicon.png') }}" rel="icon">
-  <link href="{{ url('img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Bootstrap core CSS -->
   <link href="{{ url('lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -43,7 +43,7 @@
         <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
       </div>
       <!--logo start-->
-      <a href="{{ route('proprietaires.index') }}" class="logo"><b>TSIM<span>MO</span></b></a>
+      <a href="{{ route('proprietaire.index') }}" class="logo"><b>TSIM<span>MO</span></b></a>
     </header>
     <!--header end-->
     <!-- **********************************************************************************************************************************************************
@@ -57,7 +57,7 @@
           <p class="centered"><img src="{{ url('img/ui-sam.png') }}" class="img-circle" width="100" height="100"></p>
           <h5 class="centered">TS - IMMO</h5>
           <li class="mt">
-            <a class="active" href="{{ route('proprietaires.index') }}">
+            <a class="active" href="{{ route('proprietaire.index') }}">
               <i class="fa fa-dashboard"></i>
               <span>Tableau de bord</span>
               </a>
@@ -82,6 +82,7 @@
               <span>Propriétaire</span>
               </a>
             <ul class="sub">
+              <li><a href="{{ route('proprietaire.index') }}"> Liste propriétaire </a></li>
               <li><a href="blank.html">Liste des biens</a></li>
               <li><a href="login.html">Login</a></li>
               <li><a href="profile.html">Profile</a></li>
@@ -118,56 +119,59 @@
       </div>
     </aside>
     <!--sidebar end-->
-    <!--sidebar end-->
     <!-- **********************************************************************************************************************************************************
         MAIN CONTENT
         *********************************************************************************************************************************************************** -->
     <!--main content start-->
     <section id="main-content">
-      <section class="wrapper">
-        <div class="row mt">
-          <div class="col-lg-12 col-md-12 col-sm-12">
-          
-          @foreach ($immeubles as $immeuble)
-              <div class="showback">
-                
-                <div class="row">
-                  <h3 class="text-center"><span style="font-weight: bold">Nom de l'immeuble:</span> {{$immeuble->libele}} </h3>
-                </div>
-                <div class="row">
-                  <div class="col-md-3">
-                    <p style="font-size: 25px">Nombre d'appartement: {{$immeuble->nombre_appartement}}</p>
-                  </div>
-                  <div class="col-md-3">
-                    <p style="font-size: 25px">Nombre de Studio: {{$immeuble->nombre_studio}}</p>
-                  </div>
-                  <div class="col-md-3">
-                    <p style="font-size: 25px">Nombre d'appartement: {{$immeuble->nombre_bureau}}</p>
-                  </div>
-                  <div class="col-md-3">
-                    <p style="font-size: 25px">Nombre de Studio: {{$immeuble->nombre_magasin}}</p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-3">
-                    <p style="font-size: 25px"> Supérficie: {{$immeuble->superficie}}</p>
-                  </div>
-                  <div class="col-md-3">
-                    <p style="font-size: 25px"> Quartier: {{$immeuble->quartier->libele}}</p>
-                  </div>
-                  <div class="col-md-3">
-                    <p style="font-size: 25px"> Proprétaire: {{$immeuble->prorietaire->prenom }}  {{ $immeuble->prorietaire->nom}}</p>
-                  </div>
-                </div>
-                
+      <section class="wrapper site-min-height">
+        <!-- page start-->
+        <div class="chat-room mt">
+          <aside class="mid-side" style="font-size: 20px">
+            <div class="chat-room-head">
+              <h3>La liste de mes biens</h3>
+            </div>
+            <div class="group-rom">
+              <div class="first-part odd">La liste de mes immeubles</div>
+            </div>
+            {{$villas}}
+            {{dd()}};
+            @foreach ($villas as $villa) 
+              <div class="group-rom">
+                <div class="first-part">Immeuble numéro: {{$villa->id}}</div>
+                <div class="second-part">Nom de l'immeuble: {{$villa->libele}}</div>
               </div>
             @endforeach
-
-            <!-- /showback -->
-          </div>
-          
-        </div>
-        <!--/ row -->
+            <div class="group-rom">
+              <div class="first-part odd">Sam Soffes</div>
+              <div class="second-part">I want you examine the new product</div>
+              <div class="third-part">12:32</div>
+            </div>
+            <div class="group-rom">
+              <div class="first-part">Mark Simmons</div>
+              <div class="second-part">Ok, send me the pic</div>
+              <div class="third-part">12:32</div>
+            </div>
+            <div class="group-rom">
+              <div class="first-part odd">Sam Soffes</div>
+              <div class="second-part">
+                <p><img class="img-responsive" width="150" height="150" src="img/port04.jpg" alt=""></p>
+              </div>
+              <div class="third-part">12:32</div>
+            </div>
+            <div class="group-rom">
+              <div class="first-part">Mark Simmons</div>
+              <div class="second-part">Fantastic job, love it :)</div>
+              <div class="third-part">12:32</div>
+            </div>
+            <div class="group-rom last-group">
+              <div class="first-part odd">Sam Soffes</div>
+              <div class="second-part">Thanks!!</div>
+              <div class="third-part">12:33</div>
+            </div>
+          </aside>
+        </div> 
+        <!-- page end-->
       </section>
       <!-- /wrapper -->
     </section>
@@ -176,7 +180,6 @@
   </section>
   <!-- js placed at the end of the document so the pages load faster -->
   <script src="lib/jquery/jquery.min.js"></script>
-
   <script src="lib/bootstrap/js/bootstrap.min.js"></script>
   <script class="include" type="text/javascript" src="lib/jquery.dcjqaccordion.2.7.js"></script>
   <script src="lib/jquery.scrollTo.min.js"></script>
@@ -184,8 +187,7 @@
   <!--common script for all pages-->
   <script src="lib/common-scripts.js"></script>
   <!--script for this page-->
-  <script type="text/javascript" src="lib/gritter/js/jquery.gritter.js"></script>
-  <script type="text/javascript" src="lib/gritter-conf.js"></script>
+
 </body>
 
 </html>

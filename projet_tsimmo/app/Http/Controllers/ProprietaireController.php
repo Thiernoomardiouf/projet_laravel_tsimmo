@@ -15,7 +15,7 @@ class ProprietaireController extends Controller
         $proprietaires = Proprietaire::all();
         //dump($proprietaires);
 
-        return view('proprietaire.index',[
+        return view('proprietaire.indexproprietaires',[
             'proprietaires' => $proprietaires
         ]);
     }
@@ -36,7 +36,16 @@ class ProprietaireController extends Controller
     }
 
     public function show(Proprietaire  $proprietaire){
-        return view('proprietaire.show',['proprietaire' => $proprietaire]);
+
+        $villas = $proprietaire->villas();
+        $immeubles = $proprietaire->immeubles();
+        
+        return view('proprietaire.biens',
+         [
+             'proprietaire' => $proprietaire,
+              'villas' => $villas,
+              'immeubles' => $immeubles
+            ]);
 
     }
 }

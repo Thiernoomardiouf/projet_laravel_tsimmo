@@ -18,8 +18,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('proprietaire.index');
+})->name('proprietaires.index');
 
     // Route::middleware(['auth'])->group(function () {
 
@@ -29,28 +29,28 @@ Route::get('/', function () {
         Route::get('/proprietaire', 'App\Http\Controllers\ProprietaireController@index')->name('proprietaire.index');
         Route::get('/proprietaire/create', 'App\Http\Controllers\ProprietaireController@create')->name('proprietaire.create');
         Route::get('/proprietaire/store', 'App\Http\Controllers\ProprietaireController@store')->name('proprietaire.store');
-        Route::get('/proprietaire/{proprietaire}', 'App\Http\Controllers\ProprietaireController@show')->name('proprietaire.show');
+        Route::get('/biens', 'App\Http\Controllers\ProprietaireController@show')->name('proprietaire.show');
 
         // Les routes pour les proprités 
         Route::get('/immeuble', 'App\Http\Controllers\ImmeubleController@index')->name('proprietaire.immeuble');
-        Route::get('/immeuble/create', 'App\Http\Controllers\ImmeubleController@create')->name('immeuble.create');
-        Route::get('/immeuble/store', 'App\Http\Controllers\ImmeubleController@store')->name('immeuble.store');
+        Route::get('/immeuble/create', 'App\Http\Controllers\ImmeubleController@create')->name('proprietaire.createimmeuble');
+        Route::get('/immeuble/store', 'App\Http\Controllers\ImmeubleController@store')->name('proprietaire.storeimmeuble');
 
-        Route::get('/villa', 'App\Http\Controllers\VillaController@index')->name('villa.index');
-        Route::get('/villa/create', 'App\Http\Controllers\VillaController@create')->name('villa.create');
-        Route::get('/villa/store', 'App\Http\Controllers\VillaController@store')->name('villa.store');        
+        Route::get('/villa', 'App\Http\Controllers\VillaController@index')->name('proprietaire.villa');
+        Route::get('/villa/create', 'App\Http\Controllers\VillaController@create')->name('proprietaire.createvilla');
+        Route::get('/villa/store', 'App\Http\Controllers\VillaController@store')->name('proprietaire.storevilla');        
         
-        Route::get('/appartement', 'App\Http\Controllers\AppartementController@index')->name('appartement.index');
-        Route::get('/appartement/create', 'App\Http\Controllers\AppartementController@create')->name('appartement.create');
-        Route::get('/appartement/store', 'App\Http\Controllers\AppartementController@store')->name('appartement.store');
+        Route::get('/appartement', 'App\Http\Controllers\AppartementController@index')->name('proprietaire.appartement');
+        Route::get('/appartement/create', 'App\Http\Controllers\AppartementController@create')->name('proprietaire.createappartement');
+        Route::get('/appartement/store', 'App\Http\Controllers\AppartementController@store')->name('proprietaire.storeappartement');
 
-        Route::get('/bureau', 'App\Http\Controllers\BureauController@index')->name('bureau.index');
-        Route::get('/bureau/create', 'App\Http\Controllers\BureauController@create')->name('bureau.create');
-        Route::get('/bureau/store', 'App\Http\Controllers\BureauController@store')->name('bureau.store');
+        Route::get('/bureau', 'App\Http\Controllers\BureauController@index')->name('proprietaire.bureau');
+        Route::get('/bureau/create', 'App\Http\Controllers\BureauController@create')->name('proprietaire.createbureau');
+        Route::get('/bureau/store', 'App\Http\Controllers\BureauController@store')->name('proprietaire.storebureau');
 
-        Route::get('/studio', 'App\Http\Controllers\StudioController@index')->name('studio.index');
-        Route::get('/studio/create', 'App\Http\Controllers\StudioController@create')->name('studio.create');
-        Route::get('/studio/store', 'App\Http\Controllers\StudioController@store')->name('studio.store');
+        Route::get('/studio', 'App\Http\Controllers\StudioController@index')->name('proprietaire.studio');
+        Route::get('/studio/create', 'App\Http\Controllers\StudioController@create')->name('proprietaire.createstudio');
+        Route::get('/studio/store', 'App\Http\Controllers\StudioController@store')->name('proprietaire.storestudio');
         
     // });
 

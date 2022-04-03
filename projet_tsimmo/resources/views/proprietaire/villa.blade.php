@@ -118,56 +118,82 @@
       </div>
     </aside>
     <!--sidebar end-->
-    <!--sidebar end-->
     <!-- **********************************************************************************************************************************************************
         MAIN CONTENT
         *********************************************************************************************************************************************************** -->
     <!--main content start-->
     <section id="main-content">
-      <section class="wrapper">
-        <div class="row mt">
-          <div class="col-lg-12 col-md-12 col-sm-12">
-          
-          @foreach ($immeubles as $immeuble)
-              <div class="showback">
-                
-                <div class="row">
-                  <h3 class="text-center"><span style="font-weight: bold">Nom de l'immeuble:</span> {{$immeuble->libele}} </h3>
-                </div>
-                <div class="row">
-                  <div class="col-md-3">
-                    <p style="font-size: 25px">Nombre d'appartement: {{$immeuble->nombre_appartement}}</p>
-                  </div>
-                  <div class="col-md-3">
-                    <p style="font-size: 25px">Nombre de Studio: {{$immeuble->nombre_studio}}</p>
-                  </div>
-                  <div class="col-md-3">
-                    <p style="font-size: 25px">Nombre d'appartement: {{$immeuble->nombre_bureau}}</p>
-                  </div>
-                  <div class="col-md-3">
-                    <p style="font-size: 25px">Nombre de Studio: {{$immeuble->nombre_magasin}}</p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-3">
-                    <p style="font-size: 25px"> Supérficie: {{$immeuble->superficie}}</p>
-                  </div>
-                  <div class="col-md-3">
-                    <p style="font-size: 25px"> Quartier: {{$immeuble->quartier->libele}}</p>
-                  </div>
-                  <div class="col-md-3">
-                    <p style="font-size: 25px"> Proprétaire: {{$immeuble->prorietaire->prenom }}  {{ $immeuble->prorietaire->nom}}</p>
-                  </div>
-                </div>
-                
+      <section class="wrapper site-min-height">
+        <!-- page start-->
+        <div class="chat-room mt">
+          <aside class="mid-side">
+            <div class="chat-room-head">
+              <h3>Nos villas</h3>
+              <form action="#" class="pull-right position">
+                <input type="text" placeholder="Search" class="form-control search-btn ">
+              </form>
+            </div>
+            <div class="room-desk">
+              <h4 class="pull-left">Nous proposons le confort</h4>
+            @foreach ($villas as $villa) 
+              <div class="room-box" style="font-size: 20px">
+                <h3 class="text-primary"> {{$villa->libele}} </h3>
+                <p>Cette villa occupe une supérficie de {{$villa->superficie}}.</p> <p>Propriétaire: {{$villa->prorietaire->prenom}} {{$villa->prorietaire->nom}} </p>
+                <p><span class="text-muted">Nombre de piéces :</span> {{$villa->nombre_piece}} <span class="text-muted">. Il se trouve dans le quartier :</span> {{$villa->quartier->libele}} </p>
               </div>
             @endforeach
+            </div>
+            
+          </aside>
 
-            <!-- /showback -->
-          </div>
-          
+          <aside class="right-side">
+            <div class="user-head">
+              <a href="#" class="chat-tools btn-theme"><i class="fa fa-cog"></i> </a>
+              <a href="#" class="chat-tools btn-theme03"><i class="fa fa-key"></i> </a>
+            </div>
+            <div class="invite-row">
+              <h4 class="pull-left">Nos locataires </h4>
+            </div>
+            <ul class="chat-available-user">
+              <li>
+                <a href="chat_room.html">
+                  <img class="img-circle" src="img/friends/fr-02.jpg" width="32">
+                  Paul Brown
+                  <span class="text-muted">Je suis à satisfait</span>
+                  </a>
+              </li>
+              <li>
+                <a href="chat_room.html">
+                  <img class="img-circle" src="img/friends/fr-05.jpg" width="32">
+                  David Duncan
+                  <span class="text-muted">L'appartement est calme et tranquille</span>
+                  </a>
+              </li>
+              <li>
+                <a href="chat_room.html">
+                  <img class="img-circle" src="img/friends/fr-07.jpg" width="32">
+                  Laura Smith
+                  <span class="text-muted">Ici c'est le confort totale</span>
+                  </a>
+              </li>
+              <li>
+                <a href="chat_room.html">
+                  <img class="img-circle" src="img/friends/fr-08.jpg" width="32">
+                  Julia Schultz
+                  <span class="text-muted">Je renouvelle toujours mon contrat</span>
+                  </a>
+              </li>
+              <li>
+                <a href="chat_room.html">
+                  <img class="img-circle" src="img/friends/fr-01.jpg" width="32">
+                  Frank Arias
+                  <span class="text-muted">TSIMMO c'est le plaisir et la satisfaction totale</span>
+                  </a>
+              </li>
+            </ul>
+          </aside>
         </div>
-        <!--/ row -->
+        <!-- page end-->
       </section>
       <!-- /wrapper -->
     </section>
@@ -176,7 +202,6 @@
   </section>
   <!-- js placed at the end of the document so the pages load faster -->
   <script src="lib/jquery/jquery.min.js"></script>
-
   <script src="lib/bootstrap/js/bootstrap.min.js"></script>
   <script class="include" type="text/javascript" src="lib/jquery.dcjqaccordion.2.7.js"></script>
   <script src="lib/jquery.scrollTo.min.js"></script>
@@ -184,8 +209,7 @@
   <!--common script for all pages-->
   <script src="lib/common-scripts.js"></script>
   <!--script for this page-->
-  <script type="text/javascript" src="lib/gritter/js/jquery.gritter.js"></script>
-  <script type="text/javascript" src="lib/gritter-conf.js"></script>
+
 </body>
 
 </html>

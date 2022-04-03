@@ -11,7 +11,7 @@ class VillaController extends Controller
 
         $villas = Villa::all();
 
-        return view('biens.index',[
+        return view('proprietaire.villa',[
             'villas' => $villas
         ]);
     }

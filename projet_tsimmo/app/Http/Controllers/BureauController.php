@@ -11,14 +11,14 @@ class BureauController extends Controller
 
         $bureaus = Bureau::all();
 
-        return view('biens.index',[
+        return view('proprietaire.bureau',[
             'bureaus' => $bureaus
         ]);
     }
 
     public function create() {
 
-        return view('biens.create');
+        return view('proprietaire.create');
     }
 
     public function store(Request $request) {
@@ -26,6 +26,6 @@ class BureauController extends Controller
         $inputsData = $request->all();
 
         Bureau::create($inputsData);
-        return redirect()->route('biens.index');
+        return redirect()->route('proprietaire.bureau');
     }
 }
