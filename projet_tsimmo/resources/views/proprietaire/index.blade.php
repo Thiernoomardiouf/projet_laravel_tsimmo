@@ -74,7 +74,6 @@
               <li><a href="{{ route('proprietaire.bureau') }}" style="font-size: 19px" > Bureaux </a></li>
             </ul>
           </li>
-
           <li class="sub-menu">
             <a href="javascript:;">
               <i class="fa fa-book"></i>

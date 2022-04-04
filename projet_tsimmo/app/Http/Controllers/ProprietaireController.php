@@ -48,8 +48,8 @@ class ProprietaireController extends Controller
 
     public function show(Proprietaire  $proprietaire){
 
-        $villas = $proprietaire->villas();
-        $immeubles = $proprietaire->immeubles();
+        $villas = $proprietaire->villas;
+        $immeubles = $proprietaire->immeubles;
         
         return view('proprietaire.biens',
          [

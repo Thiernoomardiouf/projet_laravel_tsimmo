@@ -117,7 +117,6 @@
             <div class="group-rom">
               <div class="first-part odd">La liste de mes immeubles</div>
             </div>
-          
             @foreach ($villas as $villa) 
               <div class="group-rom">
                 <div class="first-part">Immeuble numéro: {{$villa->id}}</div>
