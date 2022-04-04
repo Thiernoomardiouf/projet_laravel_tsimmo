@@ -11,7 +11,7 @@
 
   <!-- Favicons -->
   <link href="{{ url('img/favicon.png') }}" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="{{ url('img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
   <!-- Bootstrap core CSS -->
   <link href="{{ url('lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -82,7 +82,6 @@
               <span>Propriétaire</span>
               </a>
             <ul class="sub">
-              <li><a href="{{ route('proprietaire.index') }}"> Liste propriétaire </a></li>
               <li><a href="blank.html">Liste des biens</a></li>
               <li><a href="login.html">Login</a></li>
               <li><a href="profile.html">Profile</a></li>
@@ -124,45 +123,98 @@
         *********************************************************************************************************************************************************** -->
     <!--main content start-->
     <section id="main-content">
-      <section class="wrapper site-min-height">
-        <div class="row">
-          <div class="col-lg-12">
-          @foreach ($proprietaires as $proprietaire) 
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-              <div class="custom-box">
-                <div class="servicetitle">
-                  <h4>{{$proprietaire->prenom}}  {{$proprietaire->nom}} </h4>
-                  <hr>
-                </div>
-                <div class="icn-main-container">
-                  <p class="centered"><img src="{{ url('img/person.png') }}" class="img-circle" width="100" height="100"></p>
-                </div>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>
-                <ul class="pricing">
-                  <li>Adresse: {{$proprietaire->adresse}}</li>
-                  <li>Nationalité: {{$proprietaire->nationnalite}}</li>
-                  <li>CNI: {{$proprietaire->cni}}</li>
-                  <li>Contact: {{$proprietaire->contact}}</li>
-                  <li>Date de naissance: {{$proprietaire->date_naissance}}</li>
-                  <li>Lieu de naissance: {{$proprietaire->lieu_naissance}}</li>
-                  <li>Civilité: {{$proprietaire->civilite}}</li>
-                </ul>
-                <a class="btn btn-theme" href="{{ route('proprietaire.show') }}">Biens</a>
-              </div>
-              <!-- end custombox -->
-            </div>
-          @endforeach
+      <section class="wrapper">
+        <h3><i class="fa fa-angle-right"></i> Ajouter un propriétaire</h3>
 
-            <!-- end col-4 -->
+        <div class="row mt">
+          <div class="col-lg-12">
+            <h4><i class="fa fa-angle-right"></i> Veillez remplir correctement le formulaire</h4>
+            <div class="form-panel">
+              <div class="form">
+                <form class="cmxform form-horizontal style-form" id="signupForm" method="post" action="{{ route('proprietaire.store') }}" enctype="multipart/form-data">
+                  @csrf
+                  <div class="form-group ">
+                    <label for="firstname" class="control-label col-lg-2">Prenom</label>
+                    <div class="col-lg-10">
+                      <input class=" form-control" id="firstname" name="prenom" type="text" />
+                    </div>
+                  </div>
+                  <div class="form-group ">
+                    <label for="lastname" class="control-label col-lg-2">Nom</label>
+                    <div class="col-lg-10">
+                      <input class=" form-control" id="lastname" name="nom" type="text" />
+                    </div>
+                  </div>
+                  <div class="form-group ">
+                    <label for="username" class="control-label col-lg-2">Adresse</label>
+                    <div class="col-lg-10">
+                      <input class="form-control " id="username" name="adresse" type="text" />
+                    </div>
+                  </div>
+                  <div class="form-group ">
+                    <label for="password" class="control-label col-lg-2">Date de naissance</label>
+                    <div class="col-lg-10">
+                      <input class="form-control " id="password" name="date_naissance" type="date" />
+                    </div>
+                  </div>
+                  <div class="form-group ">
+                    <label for="confirm_password" class="control-label col-lg-2">Lieu de naissance</label>
+                    <div class="col-lg-10">
+                      <input class="form-control " id="confirm_password" name="lieu_naissance" type="text" />
+                    </div>
+                  </div>
+                  <div class="form-group ">
+                    <label for="confirm_password" class="control-label col-lg-2">Nationnalité</label>
+                    <div class="col-lg-10">
+                      <input class="form-control " id="confirm_password" name="nationnalite" type="text" />
+                    </div>
+                  </div>
+                  <div class="form-group ">
+                    <label for="email" class="control-label col-lg-2">Civilité</label>
+                    <div class="col-lg-10">
+                      <input class="form-control " id="email" name="civilite" type="text" />
+                    </div>
+                  </div>
+                  <div class="form-group ">
+                    <label for="email" class="control-label col-lg-2">Contact</label>
+                    <div class="col-lg-10">
+                      <input class="form-control " id="email" name="contact" type="text" />
+                    </div>
+                  </div>
+                  <div class="form-group ">
+                    <label for="email" class="control-label col-lg-2">Numéro carte d'identité</label>
+                    <div class="col-lg-10">
+                      <input class="form-control " id="email" name="cni" type="text" />
+                    </div>
+                  </div>
+                  <div class="form-group ">
+                    <label for="email" class="control-label col-lg-2">L'agence qui lui est rattacher</label>
+                    <div class="col-lg-10">
+                     <select class="form-control mb-3" name="agence_id" aria-label="list des agences">
+                          <option selected>Sélectionner l'agence</option>
+                          @foreach ($agences as $agence)
+                          <option value="{{ $agence->id }}">{{ $agence->raison_social }}</option>
+                          @endforeach
+                     </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-10">
+                      <button class="btn btn-theme" type="submit">Enrégistrer</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!-- /form-panel -->
           </div>
-          <!--  /col-lg-12 -->
+          <!-- /col-lg-12 -->
         </div>
-        <!--  /row -->
+        <!-- /row -->
       </section>
       <!-- /wrapper -->
     </section>
     <!-- /MAIN CONTENT -->
-    <!--main content end-->
   </section>
   <!-- js placed at the end of the document so the pages load faster -->
   <script src="lib/jquery/jquery.min.js"></script>
@@ -173,6 +225,7 @@
   <!--common script for all pages-->
   <script src="lib/common-scripts.js"></script>
   <!--script for this page-->
+  <script src="lib/form-validation-script.js"></script>
 
 </body>
 

@@ -22,16 +22,27 @@ class ProprietaireController extends Controller
 
     public function create() {
         $agences = Agence::all();
-        return view('proprietaire.create',[
+        return view('proprietaire.createProprietaire',[
             'agences' => $agences
         ]);
     }
 
     public function store(Request $request) {
 
-        $inputsData = $request->all();
+        $proprietaire = new Proprietaire();
 
-        Proprietaire::create($inputsData);
+        $proprietaire->prenom = $request->prenom;
+        $proprietaire->nom = $request->nom;
+        $proprietaire->lieu_naissance = $request->lieu_naissance;   
+        $proprietaire->contact = $request->contact;
+        $proprietaire->civilite = $request->civilite;
+        $proprietaire->nationnalite = $request->nationnalite;
+        $proprietaire->cni = $request->cni;
+        $proprietaire->adresse = $request->adresse;
+        $proprietaire->agence_id = $request->agence_id;
+        $proprietaire->date_naissance = $request->date_naissance;
+        $proprietaire->save();
+
         return redirect()->route('proprietaire.index');
     }
 

@@ -11,14 +11,14 @@ class VilleController extends Controller
 
         $villes = Ville::all();
 
-        return view('biens.index',[
+        return view('proprietaire.index',[
             'villes' => $villes
         ]);
     }
 
     public function create() {
 
-        return view('biens.create');
+        return view('proprietaire.lieux');
     }
 
     public function store(Request $request) {
@@ -26,6 +26,6 @@ class VilleController extends Controller
         $inputsData = $request->all();
 
         Ville::create($inputsData);
-        return redirect()->route('biens.index');
+       return redirect()->route('proprietaires.index');
     }
 }

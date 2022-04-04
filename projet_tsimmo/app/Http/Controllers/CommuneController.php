@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Commune;
+use App\Models\Ville;
 
 class CommuneController extends Controller
 {
@@ -11,14 +12,17 @@ class CommuneController extends Controller
 
         $communes = Commune::all();
 
-        return view('biens.index',[
+        return view('proprietaire.index',[
             'communes' => $communes
         ]);
     }
 
     public function create() {
+        $villes = Ville::all();
 
-        return view('biens.create');
+        return view('proprietaire.lieux',[
+            'villes' => $villes
+        ]);
     }
 
     public function store(Request $request) {
@@ -26,6 +30,6 @@ class CommuneController extends Controller
         $inputsData = $request->all();
 
         Commune::create($inputsData);
-        return redirect()->route('biens.index');
+        return redirect()->route('proprietaires.index');
     }
 }

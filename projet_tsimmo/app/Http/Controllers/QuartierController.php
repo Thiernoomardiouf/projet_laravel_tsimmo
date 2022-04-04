@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Quartier;
+use App\Models\Commune;
+use App\Models\Ville;
 
 class QuartierController extends Controller
 {
@@ -11,14 +13,19 @@ class QuartierController extends Controller
 
         $quartiers = Quartier::all();
 
-        return view('biens.index',[
+        return view('proprietaire.index',[
             'quartiers' => $quartiers
         ]);
     }
 
     public function create() {
+        $communes = Commune::all();
+        $villes = Ville::all();
 
-        return view('biens.create');
+        return view('proprietaire.lieux',[
+            'communes' => $communes,
+            'villes' => $villes
+        ]);
     }
 
     public function store(Request $request) {
@@ -26,6 +33,6 @@ class QuartierController extends Controller
         $inputsData = $request->all();
 
         Quartier::create($inputsData);
-        return redirect()->route('biens.index');
+         return redirect()->route('proprietaires.index');
     }
 }

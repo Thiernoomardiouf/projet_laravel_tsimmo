@@ -43,7 +43,7 @@
         <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
       </div>
       <!--logo start-->
-      <a href="{{ route('proprietaire.index') }}" class="logo"><b>TSIM<span>MO</span></b></a>
+      <a href="{{ route('proprietaires.index') }}" class="logo"><b>TSIM<span>MO</span></b></a>
     </header>
     <!--header end-->
     <!-- **********************************************************************************************************************************************************
@@ -57,7 +57,7 @@
           <p class="centered"><img src="{{ url('img/ui-sam.png') }}" class="img-circle" width="100" height="100"></p>
           <h5 class="centered">TS - IMMO</h5>
           <li class="mt">
-            <a class="active" href="{{ route('proprietaire.index') }}">
+            <a class="active" href="{{ route('proprietaires.index') }}">
               <i class="fa fa-dashboard"></i>
               <span>Tableau de bord</span>
               </a>
@@ -83,12 +83,8 @@
               </a>
             <ul class="sub">
               <li><a href="{{ route('proprietaire.index') }}"> Liste propriétaire </a></li>
-              <li><a href="blank.html">Liste des biens</a></li>
+              <li><a href="{{ route('proprietaire.create') }}"> Ajouter propriétaire </a></li>
               <li><a href="login.html">Login</a></li>
-              <li><a href="profile.html">Profile</a></li>
-              <li><a href="invoice.html">Détails sur un propriétaire</a></li>
-              <li><a href="pricing_table.html">Listes des propriétaire</a></li>
-              <li><a href="basic_table.html">Liste propriétaire</a></li>
             </ul>
           </li>
           <li class="sub-menu">
@@ -97,21 +93,10 @@
               <span>Ajouter</span>
               </a>
             <ul class="sub">
-              <li><a href="form_component.html">Ajouter propriétaire</a></li>
+              <li><a href="{{ route('proprietaire.createQuartier') }}">Ajouter les lieux</a></li>
               <li><a href="advanced_form_components.html">Advanced Components</a></li>
               <li><a href="form_validation.html">Form Validation</a></li>
               <li><a href="contactform.html">Contact Form</a></li>
-            </ul>
-          </li>
-          <li class="sub-menu">
-            <a href="javascript:;">
-              <i class="fa fa-comments-o"></i>
-              <span>Savoir plus</span>
-              </a>
-            <ul class="sub">
-              <li><a href="lobby.html">Lobby</a></li>
-              <li><a href="chat_room.html"> Chat Room</a></li>
-              <li><a href="gallery.html"> Chat Room</a></li>
             </ul>
           </li>
         </ul>

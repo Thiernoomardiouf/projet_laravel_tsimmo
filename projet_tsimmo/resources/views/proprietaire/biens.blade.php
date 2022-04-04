@@ -134,8 +134,7 @@
             <div class="group-rom">
               <div class="first-part odd">La liste de mes immeubles</div>
             </div>
-            {{$villas}}
-            {{dd()}};
+          
             @foreach ($villas as $villa) 
               <div class="group-rom">
                 <div class="first-part">Immeuble numéro: {{$villa->id}}</div>

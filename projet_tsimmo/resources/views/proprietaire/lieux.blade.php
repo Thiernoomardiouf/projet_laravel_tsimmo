@@ -83,12 +83,8 @@
               </a>
             <ul class="sub">
               <li><a href="{{ route('proprietaire.index') }}"> Liste propriétaire </a></li>
-              <li><a href="blank.html">Liste des biens</a></li>
+              <li><a href="{{ route('proprietaire.create') }}"> Ajouter propriétaire </a></li>
               <li><a href="login.html">Login</a></li>
-              <li><a href="profile.html">Profile</a></li>
-              <li><a href="invoice.html">Détails sur un propriétaire</a></li>
-              <li><a href="pricing_table.html">Listes des propriétaire</a></li>
-              <li><a href="basic_table.html">Liste propriétaire</a></li>
             </ul>
           </li>
           <li class="sub-menu">
@@ -97,21 +93,10 @@
               <span>Ajouter</span>
               </a>
             <ul class="sub">
-              <li><a href="form_component.html">Ajouter propriétaire</a></li>
+              <li><a href="{{'proprietaire.lieux'}}">Ajouter les lieux</a></li>
               <li><a href="advanced_form_components.html">Advanced Components</a></li>
               <li><a href="form_validation.html">Form Validation</a></li>
               <li><a href="contactform.html">Contact Form</a></li>
-            </ul>
-          </li>
-          <li class="sub-menu">
-            <a href="javascript:;">
-              <i class="fa fa-comments-o"></i>
-              <span>Savoir plus</span>
-              </a>
-            <ul class="sub">
-              <li><a href="lobby.html">Lobby</a></li>
-              <li><a href="chat_room.html"> Chat Room</a></li>
-              <li><a href="gallery.html"> Chat Room</a></li>
             </ul>
           </li>
         </ul>
@@ -124,45 +109,116 @@
         *********************************************************************************************************************************************************** -->
     <!--main content start-->
     <section id="main-content">
-      <section class="wrapper site-min-height">
-        <div class="row">
-          <div class="col-lg-12">
-          @foreach ($proprietaires as $proprietaire) 
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-              <div class="custom-box">
-                <div class="servicetitle">
-                  <h4>{{$proprietaire->prenom}}  {{$proprietaire->nom}} </h4>
-                  <hr>
-                </div>
-                <div class="icn-main-container">
-                  <p class="centered"><img src="{{ url('img/person.png') }}" class="img-circle" width="100" height="100"></p>
-                </div>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>
-                <ul class="pricing">
-                  <li>Adresse: {{$proprietaire->adresse}}</li>
-                  <li>Nationalité: {{$proprietaire->nationnalite}}</li>
-                  <li>CNI: {{$proprietaire->cni}}</li>
-                  <li>Contact: {{$proprietaire->contact}}</li>
-                  <li>Date de naissance: {{$proprietaire->date_naissance}}</li>
-                  <li>Lieu de naissance: {{$proprietaire->lieu_naissance}}</li>
-                  <li>Civilité: {{$proprietaire->civilite}}</li>
-                </ul>
-                <a class="btn btn-theme" href="{{ route('proprietaire.show') }}">Biens</a>
-              </div>
-              <!-- end custombox -->
-            </div>
-          @endforeach
+      <section class="wrapper">
+        <h3><i class="fa fa-angle-right"></i> Ajouter la locations des propriétés</h3>
 
-            <!-- end col-4 -->
+        <!-- FORM VILLE -->
+        <div class="row mt">
+          <div class="col-lg-12">
+            <h4><i class="fa fa-angle-right"></i> Formulaire pour les villes</h4>
+            <div class="form-panel">
+              <div class=" form">
+                <form class="cmxform form-horizontal style-form" id="commentForm" method="post" action="{{ route('proprietaire.storeVille') }}" enctype="multipart/form-data">
+                  @csrf 
+                  <div class="form-group ">
+                    <label for="cname" class="control-label col-lg-2"> Le nom de la ville</label>
+                    <div class="col-lg-10">
+                      <input class=" form-control" id="cname" name="libele" minlength="2" type="text" required />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-10">
+                      <button class="btn btn-theme" type="submit">Ajouter</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!-- /form-panel -->
           </div>
-          <!--  /col-lg-12 -->
+          <!-- /col-lg-12 -->
         </div>
-        <!--  /row -->
+        <!-- /row -->
+        <!-- FORM COMMUNE -->
+        <div class="row mt">
+          <div class="col-lg-12">
+            <h4><i class="fa fa-angle-right"></i> Formulaire pour les communes</h4>
+            <div class="form-panel">
+              <div class=" form">
+                <form class="cmxform form-horizontal style-form" id="commentForm" method="post" action="{{ route('proprietaire.storeCommune') }}" enctype="multipart/form-data">
+                  @csrf 
+                  <div class="form-group ">
+                    <label for="cname" class="control-label col-lg-2"> Le nom de la commune</label>
+                    <div class="col-lg-10">
+                      <input class=" form-control" id="cname" name="libele" minlength="2" type="text" required />
+                    </div>
+                  </div>
+                  <div class="form-group ">
+                    <label for="email" class="control-label col-lg-2">La ville ou se trouve la commune</label>
+                    <div class="col-lg-10">
+                     <select class="form-control mb-3" name="ville_id" aria-label="list des agences">
+                          <option selected>Sélectionner une ville</option>
+                          @foreach ($villes as $ville)
+                          <option value="{{ $ville->id }}">{{ $ville->libele }}</option>
+                          @endforeach
+                     </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-10">
+                      <button class="btn btn-theme" type="submit">Ajouter</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!-- /form-panel -->
+          </div>
+          <!-- /col-lg-12 -->
+        </div>
+        <!-- /row -->
+        <!-- FORM VILLE -->
+        <div class="row mt">
+          <div class="col-lg-12">
+            <h4><i class="fa fa-angle-right"></i> Formulaire pour les quartiers</h4>
+            <div class="form-panel">
+              <div class=" form">
+                <form class="cmxform form-horizontal style-form" id="commentForm" method="post" action="{{ route('proprietaire.storeQuartier') }}" enctype="multipart/form-data">
+                  @csrf 
+                  <div class="form-group ">
+                    <label for="cname" class="control-label col-lg-2"> Le nom du quartier</label>
+                    <div class="col-lg-10">
+                      <input class=" form-control" id="cname" name="libele" minlength="2" type="text" required />
+                    </div>
+                  </div>
+                  <div class="form-group ">
+                    <label for="email" class="control-label col-lg-2">La commune du quartier</label>
+                    <div class="col-lg-10">
+                     <select class="form-control mb-3" name="commune_id" aria-label="list des agences">
+                          <option selected>Sélectionner une commune</option>
+                          @foreach ($communes as $commune)
+                          <option value="{{ $commune->id }}">{{ $commune->libele }}</option>
+                          @endforeach
+                     </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-10">
+                      <button class="btn btn-theme" type="submit">Ajouter</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!-- /form-panel -->
+          </div>
+          <!-- /col-lg-12 -->
+        </div>
+        <!-- /row -->
       </section>
       <!-- /wrapper -->
     </section>
     <!-- /MAIN CONTENT -->
-    <!--main content end-->
   </section>
   <!-- js placed at the end of the document so the pages load faster -->
   <script src="lib/jquery/jquery.min.js"></script>
@@ -173,6 +229,7 @@
   <!--common script for all pages-->
   <script src="lib/common-scripts.js"></script>
   <!--script for this page-->
+  <script src="lib/form-validation-script.js"></script>
 
 </body>
 
