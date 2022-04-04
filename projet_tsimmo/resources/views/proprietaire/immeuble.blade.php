@@ -11,7 +11,7 @@
 
   <!-- Favicons -->
   <link href="{{ url('img/favicon.png') }}" rel="icon">
-  <link href="{{ url('img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Bootstrap core CSS -->
   <link href="{{ url('lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -82,12 +82,8 @@
               <span>Propriétaire</span>
               </a>
             <ul class="sub">
-              <li><a href="blank.html">Liste des biens</a></li>
-              <li><a href="login.html">Login</a></li>
-              <li><a href="profile.html">Profile</a></li>
-              <li><a href="invoice.html">Détails sur un propriétaire</a></li>
-              <li><a href="pricing_table.html">Listes des propriétaire</a></li>
-              <li><a href="basic_table.html">Liste propriétaire</a></li>
+              <li><a href="{{ route('proprietaire.index') }}"> Liste propriétaire </a></li>
+              <li><a href="{{ route('proprietaire.create') }}"> Ajouter propriétaire </a></li>
             </ul>
           </li>
           <li class="sub-menu">
@@ -96,21 +92,10 @@
               <span>Ajouter</span>
               </a>
             <ul class="sub">
-              <li><a href="form_component.html">Ajouter propriétaire</a></li>
-              <li><a href="advanced_form_components.html">Advanced Components</a></li>
-              <li><a href="form_validation.html">Form Validation</a></li>
-              <li><a href="contactform.html">Contact Form</a></li>
-            </ul>
-          </li>
-          <li class="sub-menu">
-            <a href="javascript:;">
-              <i class="fa fa-comments-o"></i>
-              <span>Savoir plus</span>
-              </a>
-            <ul class="sub">
-              <li><a href="lobby.html">Lobby</a></li>
-              <li><a href="chat_room.html"> Chat Room</a></li>
-              <li><a href="gallery.html"> Chat Room</a></li>
+              <li><a href="{{ route('proprietaire.createQuartier') }}">Ajouter les lieux</a></li>
+              <li><a href="{{ route('proprietaire.createImmeuble') }}">Ajouter des immeubles</a></li>
+              <li><a href="{{ route('proprietaire.createVilla') }}">Ajouter des villas</a></li>
+              <li><a href="{{ route('proprietaire.createBureau') }}">Ajouter des appatements, bureaux ou studios</a></li>
             </ul>
           </li>
         </ul>
@@ -142,7 +127,7 @@
                     <p style="font-size: 25px">Nombre de Studio: {{$immeuble->nombre_studio}}</p>
                   </div>
                   <div class="col-md-3">
-                    <p style="font-size: 25px">Nombre d'appartement: {{$immeuble->nombre_bureau}}</p>
+                    <p style="font-size: 25px">Nombre de bureau: {{$immeuble->nombre_bureau}}</p>
                   </div>
                   <div class="col-md-3">
                     <p style="font-size: 25px">Nombre de Studio: {{$immeuble->nombre_magasin}}</p>

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\Villa;
+use App\Models\Proprietaire;
+use App\Models\Quartier;
 
 use Illuminate\Http\Request;
 
@@ -18,7 +20,13 @@ class VillaController extends Controller
 
     public function create() {
 
-        return view('biens.create');
+        $proprietaires = Proprietaire::all();
+        $quartiers = Quartier::all();
+
+        return view('proprietaire.createVilla',[
+            'proprietaires' => $proprietaires,
+            'quartiers' => $quartiers
+        ]);
     }
 
     public function store(Request $request) {
@@ -26,6 +34,6 @@ class VillaController extends Controller
         $inputsData = $request->all();
 
         Villa::create($inputsData);
-        return redirect()->route('biens.index');
+        return redirect()->route('proprietaire.villa');
     }
 }

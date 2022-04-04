@@ -84,7 +84,6 @@
             <ul class="sub">
               <li><a href="{{ route('proprietaire.index') }}"> Liste propriétaire </a></li>
               <li><a href="{{ route('proprietaire.create') }}"> Ajouter propriétaire </a></li>
-              <li><a href="login.html">Login</a></li>
             </ul>
           </li>
           <li class="sub-menu">
@@ -94,9 +93,9 @@
               </a>
             <ul class="sub">
               <li><a href="{{ route('proprietaire.createQuartier') }}">Ajouter les lieux</a></li>
-              <li><a href="advanced_form_components.html">Advanced Components</a></li>
-              <li><a href="form_validation.html">Form Validation</a></li>
-              <li><a href="contactform.html">Contact Form</a></li>
+              <li><a href="{{ route('proprietaire.createImmeuble') }}">Ajouter des immeubles</a></li>
+              <li><a href="{{ route('proprietaire.createVilla') }}">Ajouter des villas</a></li>
+              <li><a href="{{ route('proprietaire.createBureau') }}">Ajouter des appatements, bureaux ou studios</a></li>
             </ul>
           </li>
         </ul>

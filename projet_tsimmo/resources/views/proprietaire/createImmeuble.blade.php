@@ -109,76 +109,69 @@
     <!--main content start-->
     <section id="main-content">
       <section class="wrapper">
-        <h3><i class="fa fa-angle-right"></i> Ajouter un propriétaire</h3>
+        <h3><i class="fa fa-angle-right"></i> Ajouter une immeuble</h3>
 
         <div class="row mt">
           <div class="col-lg-12">
             <h4><i class="fa fa-angle-right"></i> Veillez remplir correctement le formulaire</h4>
             <div class="form-panel">
               <div class="form">
-                <form class="cmxform form-horizontal style-form" id="signupForm" method="post" action="{{ route('proprietaire.store') }}" enctype="multipart/form-data">
+                <form class="cmxform form-horizontal style-form" id="signupForm" method="post" action="{{ route('proprietaire.storeImmeuble') }}" enctype="multipart/form-data">
                   @csrf
                   <div class="form-group ">
-                    <label for="firstname" class="control-label col-lg-2">Prenom</label>
+                    <label for="firstname" class="control-label col-lg-2">Le nom de l'immeuble</label>
                     <div class="col-lg-10">
-                      <input class=" form-control" id="firstname" name="prenom" type="text" />
+                      <input class=" form-control" id="firstname" name="libele" type="text" />
                     </div>
                   </div>
                   <div class="form-group ">
-                    <label for="lastname" class="control-label col-lg-2">Nom</label>
+                    <label for="lastname" class="control-label col-lg-2">Le nombre d'appartements</label>
                     <div class="col-lg-10">
-                      <input class=" form-control" id="lastname" name="nom" type="text" />
+                      <input class=" form-control" id="lastname" name="nombre_appartement" type="number" />
                     </div>
                   </div>
                   <div class="form-group ">
-                    <label for="username" class="control-label col-lg-2">Adresse</label>
+                    <label for="username" class="control-label col-lg-2">Le nombre de bureaux</label>
                     <div class="col-lg-10">
-                      <input class="form-control " id="username" name="adresse" type="text" />
+                      <input class="form-control " id="username" name="nombre_bureau" type="number" />
                     </div>
                   </div>
                   <div class="form-group ">
-                    <label for="password" class="control-label col-lg-2">Date de naissance</label>
+                    <label for="password" class="control-label col-lg-2">Le nombre de studios</label>
                     <div class="col-lg-10">
-                      <input class="form-control " id="password" name="date_naissance" type="date" />
+                      <input class="form-control " id="password" name="nombre_studio" type="number" />
                     </div>
                   </div>
                   <div class="form-group ">
-                    <label for="confirm_password" class="control-label col-lg-2">Lieu de naissance</label>
+                    <label for="confirm_password" class="control-label col-lg-2">Le nombre de magasin</label>
                     <div class="col-lg-10">
-                      <input class="form-control " id="confirm_password" name="lieu_naissance" type="text" />
+                      <input class="form-control " id="confirm_password" name="nombre_magasin" type="number" />
                     </div>
                   </div>
                   <div class="form-group ">
-                    <label for="confirm_password" class="control-label col-lg-2">Nationnalité</label>
+                    <label for="confirm_password" class="control-label col-lg-2">La Superficie de l'immeuble</label>
                     <div class="col-lg-10">
-                      <input class="form-control " id="confirm_password" name="nationnalite" type="text" />
+                      <input class="form-control " id="confirm_password" name="superficie" type="text" />
+                    </div>
+                  </div>                  
+                  <div class="form-group ">
+                    <label for="email" class="control-label col-lg-2">Le quartier ou se trouve l'immeuble</label>
+                    <div class="col-lg-10">
+                     <select class="form-control mb-3" name="quartier_id" aria-label="list des quartiers">
+                          <option selected>Sélectionner un quartier</option>
+                          @foreach ($quartiers as $quartier)
+                          <option value="{{ $quartier->id }}">{{ $quartier->libele }}</option>
+                          @endforeach
+                     </select>
                     </div>
                   </div>
                   <div class="form-group ">
-                    <label for="email" class="control-label col-lg-2">Civilité</label>
+                    <label for="email" class="control-label col-lg-2">Le proprétaire de l'immeuble</label>
                     <div class="col-lg-10">
-                      <input class="form-control " id="email" name="civilite" type="text" />
-                    </div>
-                  </div>
-                  <div class="form-group ">
-                    <label for="email" class="control-label col-lg-2">Contact</label>
-                    <div class="col-lg-10">
-                      <input class="form-control " id="email" name="contact" type="text" />
-                    </div>
-                  </div>
-                  <div class="form-group ">
-                    <label for="email" class="control-label col-lg-2">Numéro carte d'identité</label>
-                    <div class="col-lg-10">
-                      <input class="form-control " id="email" name="cni" type="text" />
-                    </div>
-                  </div>
-                  <div class="form-group ">
-                    <label for="email" class="control-label col-lg-2">L'agence qui lui est rattacher</label>
-                    <div class="col-lg-10">
-                     <select class="form-control mb-3" name="agence_id" aria-label="list des agences">
-                          <option selected>Sélectionner l'agence</option>
-                          @foreach ($agences as $agence)
-                          <option value="{{ $agence->id }}">{{ $agence->raison_social }}</option>
+                     <select class="form-control mb-3" name="prorietaire_id" aria-label="list des propriétaires">
+                          <option selected>Sélectionner un propriétaire</option>
+                          @foreach ($proprietaires as $proprietaire)
+                          <option value="{{ $proprietaire->id }}">{{ $proprietaire->prenom }} {{ $proprietaire->nom }} Numéro d'identité: {{ $proprietaire->cni }} </option>
                           @endforeach
                      </select>
                     </div>
