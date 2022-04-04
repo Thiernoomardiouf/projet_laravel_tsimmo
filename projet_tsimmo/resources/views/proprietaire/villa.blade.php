@@ -10,7 +10,6 @@
   <title>Projet TSIMMO</title>
 
   <!-- Favicons -->
-  <link href="{{ url('img/favicon.png') }}" rel="icon">
   <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Bootstrap core CSS -->
@@ -51,51 +50,51 @@
         *********************************************************************************************************************************************************** -->
     <!--sidebar start-->
     <aside>
-      <div id="sidebar" class="nav-collapse ">
+      <div id="sidebar" class="nav-collapse" >
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
           <p class="centered"><img src="{{ url('img/ui-sam.png') }}" class="img-circle" width="100" height="100"></p>
-          <h5 class="centered">TS - IMMO</h5>
+          <h4 class="centered">TS - IMMO</h4>
           <li class="mt">
             <a class="active" href="{{ route('proprietaires.index') }}">
               <i class="fa fa-dashboard"></i>
-              <span>Tableau de bord</span>
+              <span style="font-size: 19px">Tableau de bord</span>
               </a>
           </li>
           <li class="sub-menu">
             <a href="javascript:;">
               <i class="fa fa-desktop"></i>
-              <span>Propriétés</span>
+              <span style="font-size: 19px">Propriétés</span>
               </a>
             <ul class="sub">
-              <li><a href="{{ route('proprietaire.immeuble') }}">Immeubles</a></li>
-              <li><a href="{{ route('proprietaire.appartement') }}"> Appartements</a></li>
-              <li><a href="{{ route('proprietaire.villa') }}"> Villas </a></li>
-              <li><a href="{{ route('proprietaire.studio') }}"> Studios</a></li>
-              <li><a href="{{ route('proprietaire.bureau') }}"> Bureaux </a></li>
+              <li ><a href="{{ route('proprietaire.immeuble') }}" style="font-size: 19px">Immeubles</a></li>
+              <li><a href="{{ route('proprietaire.appartement') }}" style="font-size: 19px"> Appartements</a></li>
+              <li><a href="{{ route('proprietaire.villa') }}" style="font-size: 19px"> Villas </a></li>
+              <li><a href="{{ route('proprietaire.studio') }}" style="font-size: 19px"> Studios</a></li>
+              <li><a href="{{ route('proprietaire.bureau') }}" style="font-size: 19px" > Bureaux </a></li>
             </ul>
           </li>
 
           <li class="sub-menu">
             <a href="javascript:;">
               <i class="fa fa-book"></i>
-              <span>Propriétaire</span>
+              <span style="font-size: 19px">Propriétaire</span>
               </a>
             <ul class="sub">
-              <li><a href="{{ route('proprietaire.index') }}"> Liste propriétaire </a></li>
-              <li><a href="{{ route('proprietaire.create') }}"> Ajouter propriétaire </a></li>
+              <li><a href="{{ route('proprietaire.index') }}" style="font-size: 19px"> Liste propriétaire </a></li>
+              <li><a href="{{ route('proprietaire.create') }}" style="font-size: 17px"> Ajouter propriétaire </a></li>
             </ul>
           </li>
           <li class="sub-menu">
             <a href="javascript:;">
               <i class="fa fa-tasks"></i>
-              <span>Ajouter</span>
+              <span style="font-size: 19px">Ajouter</span>
               </a>
             <ul class="sub">
-              <li><a href="{{ route('proprietaire.createQuartier') }}">Ajouter les lieux</a></li>
-              <li><a href="{{ route('proprietaire.createImmeuble') }}">Ajouter des immeubles</a></li>
-              <li><a href="{{ route('proprietaire.createVilla') }}">Ajouter des villas</a></li>
-              <li><a href="{{ route('proprietaire.createBureau') }}">Ajouter des appatements, bureaux ou studios</a></li>
+              <li><a href="{{ route('proprietaire.createQuartier') }}" style="font-size: 19px">Ajouter les lieux</a></li>
+              <li><a href="{{ route('proprietaire.createImmeuble') }}" style="font-size: 19px">Ajouter immeuble</a></li>
+              <li><a href="{{ route('proprietaire.createVilla') }}" style="font-size: 19px">Ajouter des villas</a></li>
+              <li><a href="{{ route('proprietaire.createBureau') }}" style="font-size: 19px">Ajouter des appatements, bureaux ou studios</a></li>
             </ul>
           </li>
         </ul>
@@ -137,45 +136,9 @@
               <a href="#" class="chat-tools btn-theme03"><i class="fa fa-key"></i> </a>
             </div>
             <div class="invite-row">
-              <h4 class="pull-left">Nos locataires </h4>
+              <h4 class="pull-left">Nos villas </h4>
             </div>
-            <ul class="chat-available-user">
-              <li>
-                <a href="chat_room.html">
-                  <img class="img-circle" src="img/friends/fr-02.jpg" width="32">
-                  Paul Brown
-                  <span class="text-muted">Je suis à satisfait</span>
-                  </a>
-              </li>
-              <li>
-                <a href="chat_room.html">
-                  <img class="img-circle" src="img/friends/fr-05.jpg" width="32">
-                  David Duncan
-                  <span class="text-muted">L'appartement est calme et tranquille</span>
-                  </a>
-              </li>
-              <li>
-                <a href="chat_room.html">
-                  <img class="img-circle" src="img/friends/fr-07.jpg" width="32">
-                  Laura Smith
-                  <span class="text-muted">Ici c'est le confort totale</span>
-                  </a>
-              </li>
-              <li>
-                <a href="chat_room.html">
-                  <img class="img-circle" src="img/friends/fr-08.jpg" width="32">
-                  Julia Schultz
-                  <span class="text-muted">Je renouvelle toujours mon contrat</span>
-                  </a>
-              </li>
-              <li>
-                <a href="chat_room.html">
-                  <img class="img-circle" src="img/friends/fr-01.jpg" width="32">
-                  Frank Arias
-                  <span class="text-muted">TSIMMO c'est le plaisir et la satisfaction totale</span>
-                  </a>
-              </li>
-            </ul>
+            <h1 class="text-center">Bienvenue <br><br> sur le lot de nos <br><br> villas bien décorés et meublés </h1>
           </aside>
         </div>
         <!-- page end-->

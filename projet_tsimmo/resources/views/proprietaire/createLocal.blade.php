@@ -108,20 +108,37 @@
     <!--main content start-->
     <section id="main-content">
       <section class="wrapper">
-        <h3><i class="fa fa-angle-right"></i> Ajouter la locations des propriétés</h3>
+        <h3><i class="fa fa-angle-right"></i> Ajouter des biems immobilières</h3>
 
         <!-- FORM VILLE -->
         <div class="row mt">
           <div class="col-lg-12">
-            <h4><i class="fa fa-angle-right"></i> Formulaire pour les villes</h4>
+            <h4><i class="fa fa-angle-right"></i> Formulaire pour ajouter un bureau</h4> 
             <div class="form-panel">
               <div class=" form">
-                <form class="cmxform form-horizontal style-form" id="commentForm" method="post" action="{{ route('proprietaire.storeVille') }}" enctype="multipart/form-data">
+                <form class="cmxform form-horizontal style-form" id="commentForm" method="post" action="{{ route('proprietaire.storeBureau') }}" enctype="multipart/form-data">
                   @csrf 
                   <div class="form-group ">
-                    <label for="cname" class="control-label col-lg-2"> Le nom de la ville</label>
+                    <label for="cname" class="control-label col-lg-2"> Le nom du bureau</label> 
                     <div class="col-lg-10">
                       <input class=" form-control" id="cname" name="libele" minlength="2" type="text" required />
+                    </div>
+                  </div>
+                  <div class="form-group ">
+                    <label for="cname" class="control-label col-lg-2"> La supérficie du bureau</label> 
+                    <div class="col-lg-10">
+                      <input class=" form-control" id="cname" name="superficie" minlength="2" type="text" required />
+                    </div>
+                  </div>
+                  <div class="form-group ">
+                    <label for="email" class="control-label col-lg-2">L'immeuble du burau</label>
+                    <div class="col-lg-10">
+                     <select class="form-control mb-3" name="immeuble_id" aria-label="list des immeubles">
+                          <option selected>Sélectionner une immeuble</option>
+                          @foreach ($immeubles as $immeuble)
+                          <option value="{{ $immeuble->id }}">{{ $immeuble->libele }}</option>
+                          @endforeach
+                     </select>
                     </div>
                   </div>
                   <div class="form-group">
@@ -140,24 +157,36 @@
         <!-- FORM COMMUNE -->
         <div class="row mt">
           <div class="col-lg-12">
-            <h4><i class="fa fa-angle-right"></i> Formulaire pour les communes</h4>
+            <h4><i class="fa fa-angle-right"></i> Formulaire pour ajouter un appartement</h4>
             <div class="form-panel">
               <div class=" form">
-                <form class="cmxform form-horizontal style-form" id="commentForm" method="post" action="{{ route('proprietaire.storeCommune') }}" enctype="multipart/form-data">
+                <form class="cmxform form-horizontal style-form" id="commentForm" method="post" action="{{ route('proprietaire.storeAppartement') }}" enctype="multipart/form-data">
                   @csrf 
                   <div class="form-group ">
-                    <label for="cname" class="control-label col-lg-2"> Le nom de la commune</label>
+                    <label for="cname" class="control-label col-lg-2"> Le nom de l'appartement</label> 
                     <div class="col-lg-10">
                       <input class=" form-control" id="cname" name="libele" minlength="2" type="text" required />
                     </div>
                   </div>
                   <div class="form-group ">
-                    <label for="email" class="control-label col-lg-2">La ville ou se trouve la commune</label>
+                    <label for="cname" class="control-label col-lg-2"> La supérficie de l'appartement</label> 
                     <div class="col-lg-10">
-                     <select class="form-control mb-3" name="ville_id" aria-label="list des agences">
-                          <option selected>Sélectionner une ville</option>
-                          @foreach ($villes as $ville)
-                          <option value="{{ $ville->id }}">{{ $ville->libele }}</option>
+                      <input class=" form-control" id="cname" name="superficie" minlength="2" type="text" required />
+                    </div>
+                  </div>
+                  <div class="form-group ">
+                    <label for="cname" class="control-label col-lg-2"> Le nombre de piéces de l'appartement</label> 
+                    <div class="col-lg-10">
+                      <input class=" form-control" id="cname" name="nombre_piece" minlength="2" type="number" required />
+                    </div>
+                  </div>
+                  <div class="form-group ">
+                    <label for="email" class="control-label col-lg-2">L'immeuble de l'appartement</label>
+                    <div class="col-lg-10">
+                     <select class="form-control mb-3" name="immeuble_id" aria-label="list des immeubles">
+                          <option selected>Sélectionner une immeuble</option>
+                          @foreach ($immeubles as $immeuble)
+                          <option value="{{ $immeuble->id }}">{{ $immeuble->libele }}</option>
                           @endforeach
                      </select>
                     </div>
@@ -178,24 +207,36 @@
         <!-- FORM VILLE -->
         <div class="row mt">
           <div class="col-lg-12">
-            <h4><i class="fa fa-angle-right"></i> Formulaire pour les quartiers</h4>
+            <h4><i class="fa fa-angle-right"></i> Formulaire pour ajouter un studio</h4>
             <div class="form-panel">
               <div class=" form">
-                <form class="cmxform form-horizontal style-form" id="commentForm" method="post" action="{{ route('proprietaire.storeQuartier') }}" enctype="multipart/form-data">
+                <form class="cmxform form-horizontal style-form" id="commentForm" method="post" action="{{ route('proprietaire.storeStudio') }}" enctype="multipart/form-data">
                   @csrf 
                   <div class="form-group ">
-                    <label for="cname" class="control-label col-lg-2"> Le nom du quartier</label>
+                    <label for="cname" class="control-label col-lg-2"> Le nom du studio</label> 
                     <div class="col-lg-10">
                       <input class=" form-control" id="cname" name="libele" minlength="2" type="text" required />
                     </div>
                   </div>
                   <div class="form-group ">
-                    <label for="email" class="control-label col-lg-2">La commune du quartier</label>
+                    <label for="cname" class="control-label col-lg-2"> La supérficie du studio</label> 
                     <div class="col-lg-10">
-                     <select class="form-control mb-3" name="commune_id" aria-label="list des agences">
-                          <option selected>Sélectionner une commune</option>
-                          @foreach ($communes as $commune)
-                          <option value="{{ $commune->id }}">{{ $commune->libele }}</option>
+                      <input class=" form-control" id="cname" name="superficie" minlength="2" type="text" required />
+                    </div>
+                  </div>
+                  <div class="form-group ">
+                    <label for="cname" class="control-label col-lg-2"> Le nombre de piéces du studio</label> 
+                    <div class="col-lg-10">
+                      <input class=" form-control" id="cname" name="nombre_piece" minlength="2" type="number" required />
+                    </div>
+                  </div>
+                  <div class="form-group ">
+                    <label for="email" class="control-label col-lg-2">L'immeuble du studio</label>
+                    <div class="col-lg-10">
+                     <select class="form-control mb-3" name="immeuble_id" aria-label="list des immeubles">
+                          <option selected>Sélectionner une immeuble</option>
+                          @foreach ($immeubles as $immeuble)
+                          <option value="{{ $immeuble->id }}">{{ $immeuble->libele }}</option>
                           @endforeach
                      </select>
                     </div>

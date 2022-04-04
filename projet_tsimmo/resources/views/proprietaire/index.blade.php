@@ -10,7 +10,6 @@
   <title>Projet TSIMMO</title>
 
   <!-- Favicons -->
-  <link href="{{ url('img/favicon.png') }}" rel="icon">
   <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Bootstrap core CSS -->
@@ -51,51 +50,51 @@
         *********************************************************************************************************************************************************** -->
     <!--sidebar start-->
     <aside>
-      <div id="sidebar" class="nav-collapse ">
+      <div id="sidebar" class="nav-collapse" >
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
           <p class="centered"><img src="{{ url('img/ui-sam.png') }}" class="img-circle" width="100" height="100"></p>
-          <h5 class="centered">TS - IMMO</h5>
+          <h4 class="centered">TS - IMMO</h4>
           <li class="mt">
             <a class="active" href="{{ route('proprietaires.index') }}">
               <i class="fa fa-dashboard"></i>
-              <span>Tableau de bord</span>
+              <span style="font-size: 19px">Tableau de bord</span>
               </a>
           </li>
           <li class="sub-menu">
             <a href="javascript:;">
               <i class="fa fa-desktop"></i>
-              <span>Propriétés</span>
+              <span style="font-size: 19px">Propriétés</span>
               </a>
             <ul class="sub">
-              <li><a href="{{ route('proprietaire.immeuble') }}">Immeubles</a></li>
-              <li><a href="{{ route('proprietaire.appartement') }}"> Appartements</a></li>
-              <li><a href="{{ route('proprietaire.villa') }}"> Villas </a></li>
-              <li><a href="{{ route('proprietaire.studio') }}"> Studios</a></li>
-              <li><a href="{{ route('proprietaire.bureau') }}"> Bureaux </a></li>
+              <li ><a href="{{ route('proprietaire.immeuble') }}" style="font-size: 19px">Immeubles</a></li>
+              <li><a href="{{ route('proprietaire.appartement') }}" style="font-size: 19px"> Appartements</a></li>
+              <li><a href="{{ route('proprietaire.villa') }}" style="font-size: 19px"> Villas </a></li>
+              <li><a href="{{ route('proprietaire.studio') }}" style="font-size: 19px"> Studios</a></li>
+              <li><a href="{{ route('proprietaire.bureau') }}" style="font-size: 19px" > Bureaux </a></li>
             </ul>
           </li>
 
           <li class="sub-menu">
             <a href="javascript:;">
               <i class="fa fa-book"></i>
-              <span>Propriétaire</span>
+              <span style="font-size: 19px">Propriétaire</span>
               </a>
             <ul class="sub">
-              <li><a href="{{ route('proprietaire.index') }}"> Liste propriétaire </a></li>
-              <li><a href="{{ route('proprietaire.create') }}"> Ajouter propriétaire </a></li>
+              <li><a href="{{ route('proprietaire.index') }}" style="font-size: 19px"> Liste propriétaire </a></li>
+              <li><a href="{{ route('proprietaire.create') }}" style="font-size: 17px"> Ajouter propriétaire </a></li>
             </ul>
           </li>
           <li class="sub-menu">
             <a href="javascript:;">
               <i class="fa fa-tasks"></i>
-              <span>Ajouter</span>
+              <span style="font-size: 19px">Ajouter</span>
               </a>
             <ul class="sub">
-              <li><a href="{{ route('proprietaire.createQuartier') }}">Ajouter les lieux</a></li>
-              <li><a href="{{ route('proprietaire.createImmeuble') }}">Ajouter des immeubles</a></li>
-              <li><a href="{{ route('proprietaire.createVilla') }}">Ajouter des villas</a></li>
-              <li><a href="{{ route('proprietaire.createBureau') }}">Ajouter des appatements, bureaux ou studios</a></li>
+              <li><a href="{{ route('proprietaire.createQuartier') }}" style="font-size: 19px">Ajouter les lieux</a></li>
+              <li><a href="{{ route('proprietaire.createImmeuble') }}" style="font-size: 19px">Ajouter immeuble</a></li>
+              <li><a href="{{ route('proprietaire.createVilla') }}" style="font-size: 19px">Ajouter des villas</a></li>
+              <li><a href="{{ route('proprietaire.createBureau') }}" style="font-size: 19px">Ajouter des appatements, bureaux ou studios</a></li>
             </ul>
           </li>
         </ul>
@@ -110,7 +109,7 @@
     <section id="main-content">
       <section class="wrapper">
         <div class="row">
-          <div class="col-lg-9 main-chart">
+          <div class="col-lg-12 main-chart">
             <!--CUSTOM CHART START -->
             <div class="border-head">
               <h1 class="text-center"> Bienvenue à Tasmin Immo</h1>
@@ -199,168 +198,9 @@
                 </div>
                 <!-- col-lg-4 -->
               </div>
-              <!-- /row -->
-              <div class="row mt mb">
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
-                  <div class="project-wrapper">
-                    <div class="project">
-                      <div class="photo-wrapper">
-                        <div class="photo">
-                          <a class="fancybox" href="img/portfolio/port04.jpg"><img class="img-responsive" src="img/portfolio/port07.jpg" alt=""></a>
-                        </div>
-                        <div class="overlay"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- col-lg-4 -->
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
-                  <div class="project-wrapper">
-                    <div class="project">
-                      <div class="photo-wrapper">
-                        <div class="photo">
-                          <a class="fancybox" href="img/portfolio/port05.jpg"><img class="img-responsive" src="img/portfolio/port05.jpg" alt=""></a>
-                        </div>
-                        <div class="overlay"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- col-lg-4 -->
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
-                  <div class="project-wrapper">
-                    <div class="project">
-                      <div class="photo-wrapper">
-                        <div class="photo">
-                          <a class="fancybox" href="img/portfolio/port06.jpg"><img class="img-responsive" src="img/portfolio/port04.jpg" alt=""></a>
-                        </div>
-                        <div class="overlay"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- col-lg-4 -->
               </div>
-              
+            </div>
           </section>
-
-            <!-- /row -->
-          </div>
-          <!-- /col-lg-9 END SECTION MIDDLE -->
-          <!-- **********************************************************************************************************************************************************
-              RIGHT SIDEBAR CONTENT
-              *********************************************************************************************************************************************************** -->
-          <div class="col-lg-3 ds">
-            <!--new earning end-->
-            <!-- SECTION PARTENAIRE-->
-            <h4 class="centered mt">NOS PARTENAIRES</h4>
-            <!-- First Activity -->
-            <div class="desc">
-              <div class="thumb">
-                <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-              </div>
-              <div class="details">
-                <p>
-                  <muted>Just Now</muted>
-                  <br/>
-                  <a href="#">Paul Rudd</a> purchased an item.<br/>
-                </p>
-              </div>
-            </div>
-            <!-- Second Activity -->
-            <div class="desc">
-              <div class="thumb">
-                <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-              </div>
-              <div class="details">
-                <p>
-                  <muted>2 Minutes Ago</muted>
-                  <br/>
-                  <a href="#">James Brown</a> subscribed to your newsletter.<br/>
-                </p>
-              </div>
-            </div>
-            <!-- Third Activity -->
-            <div class="desc">
-              <div class="thumb">
-                <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-              </div>
-              <div class="details">
-                <p>
-                  <muted>3 Hours Ago</muted>
-                  <br/>
-                  <a href="#">Diana Kennedy</a> purchased a year subscription.<br/>
-                </p>
-              </div>
-            </div>
-            <!-- Fourth Activity -->
-            <div class="desc">
-              <div class="thumb">
-                <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-              </div>
-              <div class="details">
-                <p>
-                  <muted>7 Hours Ago</muted>
-                  <br/>
-                  <a href="#">Brando Page</a> purchased a year subscription.<br/>
-                </p>
-              </div>
-            </div>
-            <!-- USERS ONLINE SECTION -->
-            <h4 class="centered mt">NOS MEMBERS TEMOIGNE</h4>
-            <!-- First Member -->
-            <div class="desc">
-              <div class="thumb">
-                <img class="img-circle" src="img/ui-divya.jpg" width="35px" height="35px">
-              </div>
-              <div class="details">
-                <p>
-                  <a href="#">DIVYA MANIAN</a><br/>
-                  <muted>Available</muted>
-                </p>
-              </div>
-            </div>
-            <!-- Second Member -->
-            <div class="desc">
-              <div class="thumb">
-                <img class="img-circle" src="img/ui-sherman.jpg" width="35px" height="35px">
-              </div>
-              <div class="details">
-                <p>
-                  <a href="#">DJ SHERMAN</a><br/>
-                  <muted>I am Busy</muted>
-                </p>
-              </div>
-            </div>
-            <!-- Third Member -->
-            <div class="desc">
-              <div class="thumb">
-                <img class="img-circle" src="img/ui-danro.jpg" width="35px" height="35px">
-              </div>
-              <div class="details">
-                <p>
-                  <a href="#">DAN ROGERS</a><br/>
-                  <muted>Available</muted>
-                </p>
-              </div>
-            </div>
-            <!-- Fourth Member -->
-            <div class="desc">
-              <div class="thumb">
-                <img class="img-circle" src="img/ui-zac.jpg" width="35px" height="35px">
-              </div>
-              <div class="details">
-                <p>
-                  <a href="#">Zac Sniders</a><br/>
-                  <muted>Available</muted>
-                </p>
-              </div>
-            </div>
-       
-          </div>
-          <!-- /col-lg-3 -->
-        </div>
-        <!-- /row -->
       </section>
     </section>
     <!--main content end-->
@@ -371,12 +211,6 @@
           &copy; Copyrights <strong>Dashio</strong>. All Rights Reserved
         </p>
         <div class="credits">
-          <!--
-            You are NOT allowed to delete the credit link to TemplateMag with free version.
-            You can delete the credit link only if you bought the pro version.
-            Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/dashio-bootstrap-admin-template/
-            Licensing information: https://templatemag.com/license/
-          -->
           Created with Dashio template by <a href="https://templatemag.com/">TemplateMag</a>
         </div>
         <a href="index.html#" class="go-top">
@@ -401,26 +235,7 @@
   <!--script for this page-->
   <script src="lib/sparkline-chart.js"></script>
   <script src="lib/zabuto_calendar.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function() {
-      var unique_id = $.gritter.add({
-        // (string | mandatory) the heading of the notification
-        title: 'Welcome to Dashio!',
-        // (string | mandatory) the text inside the notification
-        text: 'Hover me to enable the Close Button. You can hide the left sidebar clicking on the button next to the logo.',
-        // (string | optional) the image to display on the left
-        image: 'img/ui-sam.jpg',
-        // (bool | optional) if you want it to fade out on its own or just sit there
-        sticky: false,
-        // (int | optional) the time you want it to be alive for before fading out
-        time: 8000,
-        // (string | optional) the class name you want to apply to that specific message
-        class_name: 'my-sticky-class'
-      });
 
-      return false;
-    });
-  </script>
   <script type="application/javascript">
     $(document).ready(function() {
       $("#date-popover").popover({

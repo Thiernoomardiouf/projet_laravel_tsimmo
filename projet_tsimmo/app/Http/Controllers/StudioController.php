@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Studio;
+use App\Models\Immeuble;
 
 class StudioController extends Controller
 {
@@ -18,7 +19,11 @@ class StudioController extends Controller
 
     public function create() {
 
-        return view('proprietaire.create');
+        $immeubles = Immeuble::all();
+
+        return view('proprietaire.createLocal',[
+            'appartements' => $immeubles
+        ]);
     }
 
     public function store(Request $request) {
