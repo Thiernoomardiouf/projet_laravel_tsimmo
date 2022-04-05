@@ -74,6 +74,7 @@
               <li><a href="{{ route('proprietaire.bureau') }}" style="font-size: 19px" > Bureaux </a></li>
             </ul>
           </li>
+
           <li class="sub-menu">
             <a href="javascript:;">
               <i class="fa fa-book"></i>
@@ -108,133 +109,67 @@
     <!--main content start-->
     <section id="main-content">
       <section class="wrapper">
-        <div class="row">
-          <div class="col-lg-12 main-chart">
-            <!--CUSTOM CHART START -->
-            <div class="border-head">
-              <h1 class="text-center"> Bienvenue à Tasmin Immo</h1>
-            </div>
-            <section > <!-- id="main-content" -->
-              <div class="row mt">
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
-                  <div class="project-wrapper">
-                    <div class="project">
-                      <div class="photo-wrapper">
-                        <div class="photo">
-                          <a class="fancybox" href="img/portfolio/port04.jpg"><img class="img-responsive m-4" src="img/portfolio/port01.jpg"  alt=""></a>
-                        </div>
-                        <div class="overlay"></div>
-                      </div>
+        <h3><i class="fa fa-angle-right"></i> Ajouter une Agence TS-IMMO </h3>
+
+        <div class="row mt">
+          <div class="col-lg-12">
+            <h4><i class="fa fa-angle-right"></i> Veillez remplir correctement le formulaire</h4>
+            <div class="form-panel">
+              <div class="form">
+                <form class="cmxform form-horizontal style-form" id="signupForm" method="post" action="{{ route('proprietaire.storeAgence') }}" enctype="multipart/form-data">
+                  @csrf
+                  <div class="form-group ">
+                    <label for="firstname" class="control-label col-lg-2">La raison social </label>
+                    <div class="col-lg-10">
+                      <input class=" form-control" id="firstname" name="raison_social" type="text" />
                     </div>
                   </div>
-                </div>
-                <!-- col-lg-4 -->
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
-                  <div class="project-wrapper">
-                    <div class="project">
-                      <div class="photo-wrapper">
-                        <div class="photo">
-                          <a class="fancybox" href="img/portfolio/port05.jpg"><img class="img-responsive" src="img/portfolio/port04.jpg" alt=""></a>
-                        </div>
-                        <div class="overlay"></div>
-                      </div>
+                  <div class="form-group ">
+                    <label for="lastname" class="control-label col-lg-2">Le siége social</label>
+                    <div class="col-lg-10">
+                      <input class=" form-control" id="lastname" name="siege_social" type="text" />
                     </div>
                   </div>
-                </div>
-                <!-- col-lg-4 -->
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
-                  <div class="project-wrapper">
-                    <div class="project">
-                      <div class="photo-wrapper">
-                        <div class="photo">
-                          <a class="fancybox" href="img/portfolio/port06.jpg"><img class="img-responsive" src="img/portfolio/port01.jpg" alt=""></a>
-                        </div>
-                        <div class="overlay"></div>
-                      </div>
+                  <div class="form-group ">
+                    <label for="username" class="control-label col-lg-2">L'adresse de l'agence</label>
+                    <div class="col-lg-10">
+                      <input class="form-control " id="username" name="adresse" type="text" />
                     </div>
                   </div>
-                </div>
-                <!-- col-lg-4 -->
-              </div>
-              <!-- /row -->
-              <div class="row mt">
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
-                  <div class="project-wrapper">
-                    <div class="project">
-                      <div class="photo-wrapper">
-                        <div class="photo">
-                          <a class="fancybox" href="img/portfolio/port01.jpg"><img class="img-responsive" src="img/portfolio/port02.jpg" alt=""></a>
-                        </div>
-                        <div class="overlay"></div>
-                      </div>
+                  <div class="form-group ">
+                    <label for="password" class="control-label col-lg-2">Le numéro de l'agence </label>
+                    <div class="col-lg-10">
+                      <input class="form-control " id="password" name="telephone" type="text" />
                     </div>
                   </div>
-                </div>
-                <!-- col-lg-4 -->
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
-                  <div class="project-wrapper">
-                    <div class="project">
-                      <div class="photo-wrapper">
-                        <div class="photo">
-                          <a class="fancybox" href="img/portfolio/port02.jpg"><img class="img-responsive" src="img/portfolio/port08.jpg" alt=""></a>
-                        </div>
-                        <div class="overlay"></div>
-                      </div>
+                  <div class="form-group">
+                    <div class="col-lg-offset-2 col-lg-10">
+                      <button class="btn btn-theme" type="submit">Enrégistrer</button>
                     </div>
                   </div>
-                </div>
-                <!-- col-lg-4 -->
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
-                  <div class="project-wrapper">
-                    <div class="project">
-                      <div class="photo-wrapper">
-                        <div class="photo">
-                          <a class="fancybox" href="img/portfolio/port03.jpg"><img class="img-responsive" src="img/portfolio/port06.jpg" alt=""></a>
-                        </div>
-                        <div class="overlay"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- col-lg-4 -->
-              </div>
+                </form>
               </div>
             </div>
-          </section>
-      </section>
-    </section>
-    <!--main content end-->
-    <!--footer start-->
-    <footer class="site-footer">
-      <div class="text-center">
-        <p>
-          &copy; Copyrights <strong>Dashio</strong>. All Rights Reserved
-        </p>
-        <div class="credits">
-          Created with Dashio template by <a href="https://templatemag.com/">TemplateMag</a>
+            <!-- /form-panel -->
+          </div>
+          <!-- /col-lg-12 -->
         </div>
-        <a href="index.html#" class="go-top">
-          <i class="fa fa-angle-up"></i>
-          </a>
-      </div>
-    </footer>
-    <!--footer end-->
+        <!-- /row -->
+      </section>
+      <!-- /wrapper -->
+    </section>
+    <!-- /MAIN CONTENT -->
   </section>
   <!-- js placed at the end of the document so the pages load faster -->
   <script src="lib/jquery/jquery.min.js"></script>
-
   <script src="lib/bootstrap/js/bootstrap.min.js"></script>
   <script class="include" type="text/javascript" src="lib/jquery.dcjqaccordion.2.7.js"></script>
   <script src="lib/jquery.scrollTo.min.js"></script>
   <script src="lib/jquery.nicescroll.js" type="text/javascript"></script>
-  <script src="lib/jquery.sparkline.js"></script>
   <!--common script for all pages-->
   <script src="lib/common-scripts.js"></script>
-  <script type="text/javascript" src="lib/gritter/js/jquery.gritter.js"></script>
-  <script type="text/javascript" src="lib/gritter-conf.js"></script>
   <!--script for this page-->
-  <script src="lib/sparkline-chart.js"></script>
-  <script src="lib/zabuto_calendar.js"></script>
+  <script src="lib/form-validation-script.js"></script>
 
 </body>
 

@@ -11,14 +11,14 @@ class AgenceController extends Controller
 
         $agences = Agence::all();
 
-        return view('biens.index',[
+        return view('proprietaire.index',[
             'agences' => $agences
         ]);
     }
 
     public function create() {
 
-        return view('biens.create');
+        return view('proprietaire.createAgence');
     }
 
     public function store(Request $request) {
@@ -26,6 +26,6 @@ class AgenceController extends Controller
         $inputsData = $request->all();
 
         Agence::create($inputsData);
-        return redirect()->route('biens.index');
+        return redirect()->route('proprietaires.index');
     }
 }

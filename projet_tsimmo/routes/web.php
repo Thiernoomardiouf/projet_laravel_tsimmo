@@ -63,6 +63,10 @@ Route::get('/', function () {
         Route::get('/commune', 'App\Http\Controllers\CommuneController@index')->name('proprietaire.commune');
         Route::get('/createCommune', 'App\Http\Controllers\CommuneController@create')->name('proprietaire.createCommune');
         Route::post('/commune/store', 'App\Http\Controllers\CommuneController@store')->name('proprietaire.storeCommune');
+
+        Route::get('/agence', 'App\Http\Controllers\AgenceController@index')->name('proprietaire.agence');
+        Route::get('/createAgence', 'App\Http\Controllers\AgenceController@create')->name('proprietaire.createAgence');
+        Route::post('/agence/store', 'App\Http\Controllers\AgenceController@store')->name('proprietaire.storeAgence');
         
     // });
 

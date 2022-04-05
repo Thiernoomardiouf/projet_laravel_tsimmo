@@ -67,6 +67,7 @@
               <span style="font-size: 19px">Propriétés</span>
               </a>
             <ul class="sub">
+              <li><a href="{{ route('proprietaire.createAgence') }}" style="font-size: 19px">Ajouter agence</a></li>
               <li ><a href="{{ route('proprietaire.immeuble') }}" style="font-size: 19px">Immeubles</a></li>
               <li><a href="{{ route('proprietaire.appartement') }}" style="font-size: 19px"> Appartements</a></li>
               <li><a href="{{ route('proprietaire.villa') }}" style="font-size: 19px"> Villas </a></li>
