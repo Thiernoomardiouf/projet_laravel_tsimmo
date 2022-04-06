@@ -22,6 +22,9 @@ use Illuminate\Support\Facades\Route;
     })->name('proprietaires.index');
 
     
+    Route::get('/logout', function () {
+        return view('proprietaire.index');  
+    });
 
 
      Route::middleware(['auth'])->group(function () {
@@ -74,7 +77,7 @@ use Illuminate\Support\Facades\Route;
      });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('proprietaire.index');
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
