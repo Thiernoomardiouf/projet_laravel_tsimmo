@@ -16,12 +16,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+    
+    Route::get('/', function () {
+        return view('proprietaire.index');
+    })->name('proprietaires.index');
 
-Route::get('/', function () {
-    return view('proprietaire.index');
-})->name('proprietaires.index');
+    
 
-    // Route::middleware(['auth'])->group(function () {
+
+     Route::middleware(['auth'])->group(function () {
 
        // Les routes pour les propriétaires 
         // Route::get('/proprietaire', [ProprietaireController::class,'index'])->name('proprietaire.index');
@@ -68,7 +71,7 @@ Route::get('/', function () {
         Route::get('/createAgence', 'App\Http\Controllers\AgenceController@create')->name('proprietaire.createAgence');
         Route::post('/agence/store', 'App\Http\Controllers\AgenceController@store')->name('proprietaire.storeAgence');
         
-    // });
+     });
 
 Route::get('/dashboard', function () {
     return view('dashboard');

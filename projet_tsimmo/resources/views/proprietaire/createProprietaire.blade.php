@@ -43,6 +43,22 @@
       </div>
       <!--logo start-->
       <a href="{{ route('proprietaires.index') }}" class="logo"><b>TSIM<span>MO</span></b></a>
+      <div class="top-menu">
+        <ul class="nav pull-right top-menu">
+          <li><a class="logout" href="{{ route('login') }}">Connexion</a></li>
+          <li><a class="logout" href="{{ route('register') }}">Inscription</a></li>
+          <li> <button class="logout"> 
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <x-dropdown-link :href="route('logout')"
+                        onclick="event.preventDefault();
+                                    this.closest('form').submit();">
+                    {{ __('Déconnexion') }}
+                </x-dropdown-link>
+            </form> 
+          </button></li>
+        </ul>
+      </div>
     </header>
     <!--header end-->
     <!-- **********************************************************************************************************************************************************
