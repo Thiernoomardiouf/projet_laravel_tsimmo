@@ -35,7 +35,7 @@ use Illuminate\Support\Facades\Route;
         Route::get('/proprietaire', 'App\Http\Controllers\ProprietaireController@index')->name('proprietaire.index');
         Route::get('/createProprietaire', 'App\Http\Controllers\ProprietaireController@create')->name('proprietaire.create');
         Route::post('/proprietaire/store', 'App\Http\Controllers\ProprietaireController@store')->name('proprietaire.store');
-        Route::get('/biens', 'App\Http\Controllers\ProprietaireController@show')->name('proprietaire.show');
+        Route::get('/biens/{proprietaire}', 'App\Http\Controllers\ProprietaireController@show')->name('proprietaire.show');
 
         // Les routes pour les proprités 
         Route::get('/immeuble', 'App\Http\Controllers\ImmeubleController@index')->name('proprietaire.immeuble');

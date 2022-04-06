@@ -147,7 +147,7 @@
                   <li>Lieu de naissance: {{$proprietaire->lieu_naissance}}</li>
                   <li>Civilité: {{$proprietaire->civilite}}</li>
                 </ul>
-                <a class="btn btn-theme" href="{{ route('proprietaire.show') }}">Biens</a>
+                <a class="btn btn-theme" href="{{ route('proprietaire.show',$proprietaire) }}">Biens</a>
               </div>
               <!-- end custombox -->
             </div>

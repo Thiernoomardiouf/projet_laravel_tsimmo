@@ -132,41 +132,24 @@
               <h3>La liste de mes biens</h3>
             </div>
             <div class="group-rom">
-              <div class="first-part odd">La liste de mes immeubles</div>
+              <div class="first-part odd">La liste de mes villas</div>
             </div>
-            @foreach ($villas as $villa) 
+            @foreach ($proprietaire->villas as $villa) 
               <div class="group-rom">
-                <div class="first-part">Immeuble numéro: {{$villa->id}}</div>
-                <div class="second-part">Nom de l'immeuble: {{$villa->libele}}</div>
+                <div class="first-part">Nom de la villa:  {{$villa->libele}}</div>
+                <div class="second-part">Le quartier du villa: {{$villa->quartier->libele}}</div>
               </div>
             @endforeach
             <div class="group-rom">
-              <div class="first-part odd">Sam Soffes</div>
-              <div class="second-part">I want you examine the new product</div>
-              <div class="third-part">12:32</div>
-            </div>
-            <div class="group-rom">
-              <div class="first-part">Mark Simmons</div>
-              <div class="second-part">Ok, send me the pic</div>
-              <div class="third-part">12:32</div>
-            </div>
-            <div class="group-rom">
-              <div class="first-part odd">Sam Soffes</div>
-              <div class="second-part">
-                <p><img class="img-responsive" width="150" height="150" src="img/port04.jpg" alt=""></p>
+              <div class="first-part odd">La liste de mes immeubles</div>
+            </div> 
+            @foreach ($proprietaire->immeubles as $immeuble) 
+              <div class="group-rom">
+                <div class="first-part">Nom de l'immeuble :  {{$immeuble->libele}} </div> 
+                <div class="second-part">Le quartier de mon immeuble :  {{$immeuble->quartier->libele}}</div>
+                <div class="third-part">Le nombre d'appartements :  {{$immeuble->nombre_appartement}}</div>
               </div>
-              <div class="third-part">12:32</div>
-            </div>
-            <div class="group-rom">
-              <div class="first-part">Mark Simmons</div>
-              <div class="second-part">Fantastic job, love it :)</div>
-              <div class="third-part">12:32</div>
-            </div>
-            <div class="group-rom last-group">
-              <div class="first-part odd">Sam Soffes</div>
-              <div class="second-part">Thanks!!</div>
-              <div class="third-part">12:33</div>
-            </div>
+            @endforeach 
           </aside>
         </div> 
         <!-- page end-->

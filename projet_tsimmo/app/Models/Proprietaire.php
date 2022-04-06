@@ -12,11 +12,11 @@ class Proprietaire extends Model
     protected $guarded = ['id'];
 
     public function villas() {
-        return $this->hasMany(Villa::class);
+        return $this->hasMany(Villa::class, 'prorietaire_id');
     }
 
     public function immeubles() {
-        return $this->hasMany(Immeuble::class);
+        return $this->hasMany(Immeuble::class, 'prorietaire_id');
     }
 
     public function agence() { 
