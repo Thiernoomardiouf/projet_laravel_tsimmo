@@ -130,39 +130,39 @@
           <div class="col-lg-12 col-md-12 col-sm-12">
           
           @foreach ($immeubles as $immeuble)
-              <div class="showback">
-                
-                <div class="row">
-                  <h3 class="text-center"><span style="font-weight: bold">Nom de l'immeuble:</span> {{$immeuble->libele}} </h3>
-                </div>
-                <div class="row">
-                  <div class="col-md-3">
-                    <p style="font-size: 25px">Nombre d'appartement: {{$immeuble->nombre_appartement}}</p>
-                  </div>
-                  <div class="col-md-3">
-                    <p style="font-size: 25px">Nombre de Studio: {{$immeuble->nombre_studio}}</p>
-                  </div>
-                  <div class="col-md-3">
-                    <p style="font-size: 25px">Nombre de bureau: {{$immeuble->nombre_bureau}}</p>
-                  </div>
-                  <div class="col-md-3">
-                    <p style="font-size: 25px">Nombre de Studio: {{$immeuble->nombre_magasin}}</p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-3">
-                    <p style="font-size: 25px"> Supérficie: {{$immeuble->superficie}}</p>
-                  </div>
-                  <div class="col-md-3">
-                    <p style="font-size: 25px"> Quartier: {{$immeuble->quartier->libele}}</p>
-                  </div>
-                  <div class="col-md-3">
-                    <p style="font-size: 25px"> Proprétaire: {{$immeuble->prorietaire->prenom }}  {{ $immeuble->prorietaire->nom}}</p>
-                  </div>
-                </div>
-                
+            <div class="showback">
+              
+              <div class="row">
+                <h3 class="text-center"><span style="font-weight: bold">Nom de l'immeuble:</span> {{$immeuble->libele}} </h3>
               </div>
-            @endforeach
+              <div class="row">
+                <div class="col-md-3">
+                  <p style="font-size: 25px">Nombre d'appartement: {{$immeuble->nombre_appartement}}</p>
+                </div>
+                <div class="col-md-3">
+                  <p style="font-size: 25px">Nombre de Studio: {{$immeuble->nombre_studio}}</p>
+                </div>
+                <div class="col-md-3">
+                  <p style="font-size: 25px">Nombre de bureau: {{$immeuble->nombre_bureau}}</p>
+                </div>
+                <div class="col-md-3">
+                  <p style="font-size: 25px">Nombre de Studio: {{$immeuble->nombre_magasin}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <p style="font-size: 25px"> Supérficie: {{$immeuble->superficie}}</p>
+                </div>
+                <div class="col-md-3">
+                  <p style="font-size: 25px"> Quartier: {{$immeuble->quartier->libele}}</p>
+                </div>
+                <div class="col-md-3">
+                  <p style="font-size: 25px"> Proprétaire: {{$immeuble->prorietaire->prenom }}  {{ $immeuble->prorietaire->nom}}</p>
+                </div>
+              </div>
+              
+            </div>
+          @endforeach
 
             <!-- /showback -->
           </div>
